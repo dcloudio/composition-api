@@ -8,7 +8,7 @@ import {
 import { getCurrentInstanceForFn } from '../utils/helper'
 
 const genName = (name: string) => `on${name[0].toUpperCase() + name.slice(1)}`
-function createLifeCycle(lifeCyclehook: string) {
+export function createLifeCycle(lifeCyclehook: string) {
   return (callback: Function, target?: ComponentInternalInstance | null) => {
     const instance = getCurrentInstanceForFn(genName(lifeCyclehook), target)
     return (

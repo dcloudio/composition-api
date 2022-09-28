@@ -1,5 +1,6 @@
 export * from '../reactivity'
 export {
+  createLifeCycle,
   onBeforeMount,
   onMounted,
   onBeforeUpdate,
