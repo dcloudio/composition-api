@@ -51,7 +51,8 @@ export function computed<T>(
       if (watcher.dirty) {
         watcher.evaluate()
       }
-      if (Dep.target) {
+      // ensure that computed works in the app-plus environment
+      if (Dep.target || Dep.SharedObject?.target) {
         watcher.depend()
       }
       return watcher.value
